@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Form</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Detail Form</h1>
+    <form id="uploadForm" th:action="@{/generate-pdf}" method="post" enctype="multipart/form-data">
+        <input type="text" id="client" name="clientName" placeholder="Client" required>
+        <input type="text" id="preparedFor" name="bankName" placeholder="Prepared For" required>
+        <input type="text" id="propertyType" name="propertyType" placeholder="Property Type" required>
+        <input type="text" id="propertyAddress" name="propertyAddress" placeholder="Property Address" required>
+        <input type="text" id="plotNo" name="plotNo" placeholder="Plot No." required>
+        <input type="text" id="municipalityNo" name="municipalityNo" placeholder="Municipality No" required>
+        <textarea id="briefDescription" name="briefDescription" placeholder="Brief Description" required></textarea>
+        <input type="text" id="unitArea" name="unitArea" placeholder="Unit Area" required>
+        <input type="text" id="viewFromUnit" name="viewFromUnit" placeholder="View From the Unit" required>
+        <select id="previousInvolvement" name="previousInvolvement" required>
+            <option value="" disabled selected>Previous Involvement</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="text" id="status" name="status" placeholder="Status" required>
+        <label for="images1" class="file-upload-label">Upload Image 1</label>
+        <input type="file" id="images1" name="image1" class="file-upload-input" required>
+        <label for="images2" class="file-upload-label">Upload Image 2</label>
+        <input type="file" id="images2" name="image2" class="file-upload-input" required>
+        <button type="submit">Generate PDF</button>
+    </form>
+</div>
+</body>
+</html>
